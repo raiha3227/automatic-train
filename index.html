@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="千葉県柏市の布施弁天と手賀沼花火大会をめぐる、小さな旅のガイド。水辺の風景や季節の楽しみをご紹介します。">
+  <title>柏、水辺のよりみち。｜布施弁天と手賀沼の旅</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #263d35;
+      --muted: #6d7a70;
+      --green: #355b49;
+      --green-dark: #254638;
+      --cream: #f7f5ef;
+      --paper: #fffefa;
+      --line: #e7e5dc;
+      --orange: #e88c5c;
+      --serif: "Noto Serif JP", "Yu Mincho", serif;
+      --sans: "DM Sans", "Noto Sans JP", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 26px; height: 1px; background: var(--orange); content: ""; }
+    .serif { font-family: var(--serif); }
+    .site-header {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+    }
+    .header-inner {
+      display: flex;
+      height: 88px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgb(255 255 255 / 28%);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      width: 33px;
+      height: 33px;
+      place-items: center;
+      border: 1px solid rgb(255 255 255 / 75%);
+      border-radius: 50%;
+      font-family: var(--sans);
+      font-size: 11px;
+    }
+    .main-nav { display: flex; align-items: center; gap: 34px; }
+    .main-nav a {
+      color: rgb(255 255 255 / 90%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .main-nav a:hover { opacity: .7; }
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font: inherit;
+      font-size: 13px;
+    }
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 710px;
+      align-items: center;
+      overflow: hidden;
+      background: #476254;
+      color: white;
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgb(20 39 33 / 68%) 0%, rgb(20 39 33 / 42%) 46%, rgb(20 39 33 / 8%) 100%),
+        linear-gradient(0deg, rgb(20 39 33 / 20%), transparent 55%),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Fujigaya_Country_Club%2C_Kashiwa_Chiba_Aerial_photograph.2019.jpg/1920px-Fujigaya_Country_Club%2C_Kashiwa_Chiba_Aerial_photograph.2019.jpg") center 52% / cover;
+      content: "";
+      transform: scale(1.015);
+    }
+    .hero-content { position: relative; z-index: 1; padding-top: 72px; }
+    .hero .eyebrow { color: #e6d3ad; }
+    .hero h1 {
+      margin: 23px 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 6vw, 75px);
+      font-weight: 500;
+      letter-spacing: .07em;
+      line-height: 1.55;
+    }
+    .hero h1 span { display: block; font-size: .9em; letter-spacing: .18em; }
+    .hero-copy { max-width: 430px; color: rgb(255 255 255 / 85%); font-size: 14px; line-height: 2.2; }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      margin-top: 26px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgb(255 255 255 / 65%);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-decoration: none;
+    }
+    .hero-link span { font-size: 18px; transition: transform .2s; }
+    .hero-link:hover span { transform: translateX(5px); }
+    .hero-note {
+      position: absolute;
+      right: max(32px, calc((100vw - 1160px) / 2));
+      bottom: 34px;
+      color: rgb(255 255 255 / 76%);
+      font-size: 10px;
+      letter-spacing: .08em;
+      writing-mode: vertical-rl;
+    }
+    .intro { padding: 112px 0 100px; text-align: center; }
+    .intro h2 {
+      margin: 24px auto 16px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 500;
+      letter-spacing: .08em;
+      line-height: 1.8;
+    }
+    .intro p { margin: 0; color: var(--muted); font-size: 13px; line-height: 2.2; }
+    .story { padding: 96px 0 104px; background: var(--paper); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 43px; }
+    .section-heading h2 { margin: 14px 0 0; font-size: 35px; font-weight: 500; letter-spacing: .08em; }
+    .section-heading p { max-width: 390px; margin: 0 0 5px; color: var(--muted); font-size: 12px; line-height: 2; }
+    .place-card {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      min-height: 440px;
+      margin-bottom: 25px;
+      background: var(--cream);
+    }
+    .place-card.reverse { grid-template-columns: .97fr 1.03fr; }
+    .place-card.reverse .place-image { order: 2; }
+    .place-image { min-height: 390px; overflow: hidden; }
+    .place-image img { height: 100%; object-fit: cover; transition: transform .7s; }
+    .place-card:hover .place-image img { transform: scale(1.035); }
+    .place-copy { display: flex; flex-direction: column; justify-content: center; padding: 48px clamp(32px, 5vw, 72px); }
+    .place-number { color: var(--orange); font-family: var(--serif); font-size: 13px; letter-spacing: .12em; }
+    .place-copy h3 { margin: 15px 0 17px; font-size: clamp(22px, 2.7vw, 31px); font-weight: 500; letter-spacing: .08em; line-height: 1.6; }
+    .place-copy > p { margin: 0; color: var(--muted); font-size: 12px; line-height: 2.2; }
+    .place-tag { margin-top: 23px; color: var(--green); font-size: 10px; letter-spacing: .08em; }
+    .detail-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 20px;
+      margin-top: 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #9aab9e;
+      color: var(--green-dark);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+    .detail-link span { font-size: 17px; }
+    .season { position: relative; padding: 100px 0 108px; overflow: hidden; background: #e9eee8; }
+    .season::after {
+      position: absolute;
+      top: -180px;
+      right: -120px;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgb(53 91 73 / 10%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgb(53 91 73 / 3%), 0 0 0 90px rgb(53 91 73 / 2%);
+      content: "";
+      pointer-events: none;
+    }
+    .season .section-heading { position: relative; z-index: 1; }
+    .season-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .season-card { overflow: hidden; background: var(--paper); }
+    .season-card img { height: 260px; object-fit: cover; }
+    .season-copy { padding: 28px 32px 32px; }
+    .season-copy span { color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: .13em; }
+    .season-copy h3 { margin: 9px 0 10px; font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: .06em; }
+    .season-copy p { margin: 0; color: var(--muted); font-size: 11px; line-height: 2; }
+    .plan { padding: 100px 0; background: var(--paper); }
+    .plan-content { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; }
+    .plan-intro h2 { margin: 18px 0 14px; font-size: 31px; font-weight: 500; letter-spacing: .08em; line-height: 1.7; }
+    .plan-intro p { margin: 0; color: var(--muted); font-size: 12px; line-height: 2.2; }
+    .timeline { margin: 0; padding: 0; list-style: none; }
+    .timeline li { display: grid; grid-template-columns: 74px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .timeline li:first-child { border-top: 1px solid var(--line); }
+    .timeline time { color: var(--orange); font-family: var(--serif); font-size: 13px; letter-spacing: .06em; }
+    .timeline strong { display: block; margin-bottom: 6px; font-family: var(--serif); font-size: 14px; font-weight: 500; letter-spacing: .05em; }
+    .timeline p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.9; }
+    .notice { margin-top: 25px; padding: 18px 20px; border-left: 2px solid var(--orange); background: var(--cream); color: var(--muted); font-size: 10px; line-height: 1.9; }
+    .visit { padding: 75px 0; background: var(--green-dark); color: white; }
+    .visit-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .visit h2 { margin: 13px 0 0; font-size: 24px; font-weight: 500; letter-spacing: .08em; }
+    .visit p { margin: 10px 0 0; color: rgb(255 255 255 / 72%); font-size: 11px; line-height: 1.9; }
+    .visit .eyebrow { color: #e6d3ad; }
+    .visit-link {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 24px;
+      padding: 15px 22px;
+      border: 1px solid rgb(255 255 255 / 55%);
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .visit-link:hover { background: white; color: var(--green-dark); }
+    .visit-link span { font-size: 16px; }
+    footer { padding: 25px 0; background: #1d392d; color: rgb(255 255 255 / 62%); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    footer p { margin: 0; font-size: 9px; letter-spacing: .06em; }
+    footer a { font-size: 10px; text-decoration: none; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .header-inner { height: 72px; }
+      .brand { font-size: 13px; }
+      .menu-toggle { display: block; padding: 10px 0 10px 12px; }
+      .main-nav {
+        position: absolute;
+        top: 71px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 20px 15px;
+        background: var(--green-dark);
+      }
+      .main-nav.is-open { display: flex; flex-direction: column; }
+      .main-nav a { padding: 14px 0; border-bottom: 1px solid rgb(255 255 255 / 16%); }
+      .hero { min-height: 670px; }
+      .hero::before { background-position: 58% center; }
+      .hero-content { padding-top: 48px; }
+      .hero h1 { font-size: clamp(41px, 11vw, 62px); }
+      .hero-copy { max-width: 330px; font-size: 12px; }
+      .hero-note { right: 20px; bottom: 22px; font-size: 9px; }
+      .intro { padding: 77px 0 72px; }
+      .intro h2 { font-size: 26px; }
+      .intro p { font-size: 11px; }
+      .story, .season, .plan { padding: 72px 0; }
+      .section-heading { display: block; margin-bottom: 30px; }
+      .section-heading h2 { font-size: 29px; }
+      .section-heading p { margin-top: 15px; }
+      .place-card, .place-card.reverse { grid-template-columns: 1fr; }
+      .place-card.reverse .place-image { order: 0; }
+      .place-image { min-height: 245px; height: 245px; }
+      .place-copy { padding: 29px 25px 33px; }
+      .place-copy h3 { font-size: 23px; }
+      .season-grid { grid-template-columns: 1fr; gap: 18px; }
+      .season-card img { height: 220px; }
+      .season-copy { padding: 23px 24px 27px; }
+      .plan-content { grid-template-columns: 1fr; gap: 32px; }
+      .plan-intro h2 { font-size: 27px; }
+      .visit { padding: 58px 0; }
+      .visit-inner { align-items: flex-start; flex-direction: column; }
+      .visit h2 { font-size: 21px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="柏、水辺のよりみち。トップ">
+        <span class="brand-mark">柏</span>
+        <span>柏、水辺のよりみち。</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">メニュー</button>
+      <nav class="main-nav" id="main-nav" aria-label="メインナビゲーション">
+        <a href="#fuse">布施弁天</a>
+        <a href="#teganuma">手賀沼花火</a>
+        <a href="#season">季節の楽しみ</a>
+        <a href="#plan">旅のプラン</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <span class="eyebrow">A LITTLE JOURNEY IN KASHIWA</span>
+        <h1 id="hero-title">千葉の渋谷と言われていた街<span>「柏市」</span></h1>
+        <p class="hero-copy">歴史をたたえる古刹と、季節を映す沼のほとりへ。<br>柏で見つける、少し特別な一日をご案内します。</p>
+        <a class="hero-link" href="#intro">柏の旅をはじめる <span aria-hidden="true">→</span></a>
+      </div>
+      <span class="hero-note">CHIBA · KASHIWA · JAPAN</span>
+    </section>
+
+    <section class="intro" id="intro">
+      <div class="wrap">
+        <span class="eyebrow">A QUIET MOMENT, A BRIGHT NIGHT</span>
+        <h2 class="serif">祈りの場所から、<br>花火が咲く湖畔へ。</h2>
+        <p>柏の北に佇む布施弁天。まちの南に広がる手賀沼。<br>静かな歴史にふれたあとは、水辺の景色に身をゆだねて。<br>いつもの日常から少し離れる、柏のよりみち旅。</p>
+      </div>
+    </section>
+
+    <section class="story" aria-labelledby="story-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TWO PLACES TO VISIT</span>
+            <h2 class="serif" id="story-title">柏をめぐる、ふたつの景色</h2>
+          </div>
+          <p>歴史にふれる時間も、湖畔で過ごすひとときも。<br>柏らしい風景を、ゆっくり味わってみませんか。</p>
+        </div>
+
+        <article class="place-card" id="fuse">
+          <div class="place-image">
+            <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=1100&q=82" alt="緑に囲まれた日本の寺院" loading="lazy">
+          </div>
+          <div class="place-copy">
+            <span class="place-number">01 — HISTORY</span>
+            <h3 class="serif">祈りの風景に出会う、<br>布施弁天。</h3>
+            <p>正式には紅龍山東海寺。古くから「布施の弁天さま」と親しまれてきた、柏を代表する名刹です。境内をめぐりながら、歴史ある建物や四季折々の表情を楽しんで。近くにはあけぼの山農業公園もあり、あわせて訪れるのもおすすめです。</p>
+            <span class="place-tag">HISTORY　·　ARCHITECTURE　·　SEASONAL FLOWERS</span>
+            <a class="detail-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B8%83%E6%96%BD%E5%BC%81%E5%A4%A9+%E6%9F%8F%E5%B8%82" target="_blank" rel="noreferrer">布施弁天の場所を確認 <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="place-card reverse" id="teganuma">
+          <div class="place-image">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=82" alt="夕暮れの湖面に映る光" loading="lazy">
+          </div>
+          <div class="place-copy">
+            <span class="place-number">02 — SUMMER NIGHT</span>
+            <h3 class="serif">湖面を彩る、<br>手賀沼花火大会。</h3>
+            <p>夏の夜、手賀沼の空に大輪の花火が咲く柏・我孫子の夏の風物詩。水面に映る光や、音が響く湖畔の空気も魅力です。開催日や会場、観覧方法は年によって異なるため、お出かけ前に最新の公式情報をご確認ください。</p>
+            <span class="place-tag">SUMMER　·　FIREWORKS　·　LAKESIDE</span>
+            <a class="detail-link" href="https://www.google.com/maps/search/?api=1&query=%E6%89%8B%E8%B3%80%E6%B2%BC+%E6%9F%8F%E5%B8%82" target="_blank" rel="noreferrer">手賀沼の場所を確認 <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="season" id="season" aria-labelledby="season-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THROUGH THE SEASONS</span>
+            <h2 class="serif" id="season-title">季節と出会う、柏の時間</h2>
+          </div>
+          <p>花の季節も、夏の夜も。<br>訪れるたびに違う表情が待っています。</p>
+        </div>
+        <div class="season-grid">
+          <article class="season-card">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=82" alt="春の花が咲く穏やかな風景" loading="lazy">
+            <div class="season-copy">
+              <span>SPRING — EARLY SUMMER</span>
+              <h3>花と緑に誘われて</h3>
+              <p>布施弁天や周辺の公園をのんびり散策。花の見頃や園内の開花状況をチェックして、季節の風景を楽しんで。</p>
+            </div>
+          </article>
+          <article class="season-card">
+            <img src="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1000&q=82" alt="夜空を彩る夏の花火" loading="lazy">
+            <div class="season-copy">
+              <span>SUMMER NIGHT</span>
+              <h3>沼のほとりで、夏を感じる</h3>
+              <p>花火大会の日は会場周辺が混雑します。交通規制や観覧エリア、アクセス案内を事前に確認してお出かけください。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="plan" id="plan" aria-labelledby="plan-title">
+      <div class="wrap plan-content">
+        <div class="plan-intro">
+          <span class="eyebrow">A DAY IN KASHIWA</span>
+          <h2 class="serif" id="plan-title">ゆったり楽しむ<br>柏のよりみちプラン</h2>
+          <p>昼は歴史と自然にふれて、夕方からは水辺へ。自分のペースで柏の景色をつないでみましょう。</p>
+        </div>
+        <div>
+          <ol class="timeline">
+            <li>
+              <time>DAYTIME</time>
+              <div><strong>布施弁天をお参り</strong><p>境内をゆっくり散策。参拝の作法や行事、拝観については現地の案内をご確認ください。</p></div>
+            </li>
+            <li>
+              <time>AFTERNOON</time>
+              <div><strong>公園や沼のほとりでひと休み</strong><p>あけぼの山農業公園など周辺のスポットを訪ねて、季節の自然を楽しむのもおすすめです。</p></div>
+            </li>
+            <li>
+              <time>EVENING</time>
+              <div><strong>手賀沼の夕景を楽しむ</strong><p>花火大会当日は、早めの移動と公共交通機関の利用を。観覧場所や帰りのルートも事前に計画を。</p></div>
+            </li>
+          </ol>
+          <div class="notice">※スポット間の移動には時間がかかる場合があります。花火大会当日の交通規制・運行状況・会場案内は、最新の公式発表をご確認ください。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" aria-labelledby="visit-title">
+      <div class="wrap visit-inner">
+        <div>
+          <span class="eyebrow">PLAN YOUR VISIT</span>
+          <h2 class="serif" id="visit-title">お出かけ前に、最新情報をチェック。</h2>
+          <p>イベントの開催情報や交通案内は変更されることがあります。<br>主催者・施設の公式案内をご確認のうえ、お出かけください。</p>
+        </div>
+        <a class="visit-link" href="https://www.google.com/search?q=%E6%89%8B%E8%B3%80%E6%B2%BC%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A+%E5%85%AC%E5%BC%8F" target="_blank" rel="noreferrer">手賀沼花火大会の最新情報を検索 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© KASHIWA, CHIBA — A LITTLE JOURNEY BY THE WATER</p>
+      <p>メイン写真：<a href="https://commons.wikimedia.org/wiki/File:Fujigaya_Country_Club,_Kashiwa_Chiba_Aerial_photograph.2019.jpg" target="_blank" rel="noreferrer">国土地理院 / Wikimedia Commons</a></p>
+      <a href="#top">ページの先頭へ ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector("#main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      mainNav.classList.toggle("is-open", !isOpen);
+    });
+
+    mainNav.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        mainNav.classList.remove("is-open");
+      }
+    });
+  </script>
+</body>
+</html>
